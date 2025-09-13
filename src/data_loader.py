@@ -26,7 +26,22 @@ class DataLoader:
             f"{int(r['YEAR'])}-{int(r['DOY'])}", "%Y-%j"
         ), axis=1)
 
-        df = df[["DATE"] + self.feature_cols].dropna()
+        # Select only required columns
+        df = df[["DATE"] + self.feature_cols]
+        
+        # Remove rows with missing values (-999.0 is NASA POWER missing value indicator)
+        print(f"Original data shape: {df.shape}")
+        
+        # Remove rows where any feature column has -999.0 or NaN
+        for col in self.feature_cols:
+            df = df[df[col] != -999.0]
+        
+        # Remove NaN values
+        df = df.dropna()
+        
+        print(f"After removing missing values: {df.shape}")
+        print(f"Removed {5031 - len(df)} rows with missing data")
+        
         df.sort_values("DATE", inplace=True)
         return df
 
@@ -47,7 +62,10 @@ class DataLoader:
         Returns array with shape (1, n_steps, n_features).
         """
         values = df[self.feature_cols].values
-        scaled = self.scaler.transform(values)
+        # Ensure scaler is fitted before transform
+        if not hasattr(self.scaler, 'data_min_'):
+            self.scaler.fit(values)
+        scaled = self.scaler.fit_transform(values)
         if len(scaled) < self.n_steps:
             raise ValueError("Not enough data to form the last window.")
         last_window = scaled[-self.n_steps:]
@@ -59,7 +77,10 @@ class DataLoader:
         """
         dates = pd.to_datetime(df["DATE"]).values
         values = df[self.feature_cols].values
-        scaled = self.scaler.transform(values)
+        # Ensure scaler is fitted before transform
+        if not hasattr(self.scaler, 'data_min_'):
+            self.scaler.fit(values)
+        scaled = self.scaler.fit_transform(values)
         # Normalize target_date to numpy datetime64 for comparison
         target_ts = pd.to_datetime(target_date).to_datetime64()
         matches = np.where(dates == target_ts)[0]

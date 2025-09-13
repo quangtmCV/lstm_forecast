@@ -1,1 +1,5 @@
-.idea
+.idea/
+.venv/
+data/
+results/
+src/__pycache__
