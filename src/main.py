@@ -15,6 +15,7 @@ from data_loader import DataLoader
 from data_fetcher import DataFetcher
 from model import build_model
 from trainer import Trainer
+from web_dashboard import WebDashboard, create_templates
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 import pickle
@@ -22,13 +23,25 @@ import pickle
 class DailyForecastMain:
     """Main class for daily weather forecasting"""
     
-    def __init__(self, csv_path="data/POWER_Point_Daily_20111207_20250807_021d01N_105d83E_LST.csv"):
+    def __init__(self, csv_path="data/POWER_Point_Daily_20111207_20250807_021d01N_105d83E_LST.csv", enable_web=True):
         self.csv_path = csv_path
         self.n_steps = 20
         self.feature_cols = ["QV2M", "GWETROOT"]
         self.model_path = "model.h5"
         self.scaler_path = "scaler.pkl"
+        self.enable_web = enable_web
+        self.web_dashboard = None
         self.setup_logging()
+        
+        # Initialize web dashboard if enabled
+        if self.enable_web:
+            try:
+                create_templates()
+                self.web_dashboard = WebDashboard()
+                self.logger.info("[SUCCESS] Web dashboard initialized")
+            except Exception as e:
+                self.logger.warning(f"[WARNING] Failed to initialize web dashboard: {e}")
+                self.enable_web = False
         
     def setup_logging(self):
         """Setup logging configuration"""
@@ -241,6 +254,15 @@ class DailyForecastMain:
             
             if forecasts:
                 self.logger.info("[SUCCESS] Daily forecast completed successfully!")
+                
+                # Update web dashboard if enabled
+                if self.enable_web and self.web_dashboard:
+                    try:
+                        self.web_dashboard.update_forecast(forecasts)
+                        self.logger.info("[SUCCESS] Web dashboard updated with forecast data")
+                    except Exception as e:
+                        self.logger.warning(f"[WARNING] Failed to update web dashboard: {e}")
+                
                 return forecasts
             else:
                 self.logger.error("[ERROR] Daily forecast failed!")
@@ -299,16 +321,19 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description="Daily LSTM Weather Forecast")
-    parser.add_argument("--mode", choices=["once", "scheduler", "retrain"], 
+    parser.add_argument("--mode", choices=["once", "scheduler", "retrain", "web"], 
                        default="once", help="Run mode")
     parser.add_argument("--csv-path", 
                        default="data/POWER_Point_Daily_20111207_20250807_021d01N_105d83E_LST.csv",
                        help="Path to CSV data file")
+    parser.add_argument("--no-web", action="store_true", 
+                       help="Disable web dashboard")
     
     args = parser.parse_args()
     
     # Create forecast system
-    forecast_system = DailyForecastMain(args.csv_path)
+    enable_web = not args.no_web and args.mode != "web"
+    forecast_system = DailyForecastMain(args.csv_path, enable_web=enable_web)
     
     if args.mode == "once":
         # Run once
@@ -321,17 +346,43 @@ def main():
                 print(f"\n{tomorrow.strftime('%Y-%m-%d')}:")
                 for feature, value in forecast.items():
                     print(f"   {feature}: {value:.4f}")
+            
+            # Show web dashboard info if enabled
+            if enable_web and forecast_system.web_dashboard:
+                print(f"\n🌐 Web dashboard available at: http://127.0.0.1:5000")
+                print("Press Ctrl+C to stop the web server")
+                try:
+                    forecast_system.web_dashboard.run()
+                except KeyboardInterrupt:
+                    print("\n👋 Web dashboard stopped")
         else:
             print("Forecast failed!")
             sys.exit(1)
             
     elif args.mode == "scheduler":
         # Run scheduler
+        if enable_web and forecast_system.web_dashboard:
+            print("🌐 Starting web dashboard in background...")
+            forecast_system.web_dashboard.run_async()
         forecast_system.run_scheduler()
         
     elif args.mode == "retrain":
         # Retrain model
         forecast_system.weekly_retrain()
+        
+    elif args.mode == "web":
+        # Web dashboard only
+        if not forecast_system.web_dashboard:
+            print("❌ Web dashboard not available")
+            sys.exit(1)
+        
+        print("🌐 Starting web dashboard...")
+        print("Dashboard will be available at: http://127.0.0.1:5000")
+        print("Press Ctrl+C to stop")
+        try:
+            forecast_system.web_dashboard.run()
+        except KeyboardInterrupt:
+            print("\n👋 Web dashboard stopped")
 
 if __name__ == "__main__":
     main()

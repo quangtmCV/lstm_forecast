@@ -6,6 +6,7 @@ Hệ thống dự báo thời tiết tự động sử dụng mô hình LSTM (Lo
 
 - **Tự động cập nhật dữ liệu**: Kéo dữ liệu mới nhất từ NASA POWER API mỗi ngày
 - **Dự báo thời tiết**: Sử dụng mô hình LSTM để dự đoán thời tiết ngày mai
+- **Web Dashboard**: Giao diện web đẹp mắt để xem kết quả dự báo
 - **Lên lịch tự động**: Chạy tự động mỗi ngày lúc 6:00 AM
 - **Retrain định kỳ**: Tự động retrain model mỗi Chủ nhật lúc 2:00 AM
 - **Logging chi tiết**: Ghi log đầy đủ quá trình hoạt động
@@ -20,7 +21,10 @@ lstm_forecast/
 │   ├── data_loader.py            # Load và xử lý dữ liệu
 │   ├── data_fetcher.py           # Kéo dữ liệu từ NASA POWER API
 │   ├── model.py                  # Định nghĩa mô hình LSTM
-│   └── trainer.py                # Training và prediction
+│   ├── trainer.py                # Training và prediction
+│   ├── web_dashboard.py          # Web dashboard module
+│   └── templates/                # HTML templates
+│       └── dashboard.html        # Dashboard template
 ├── data/                         # Dữ liệu thời tiết
 │   └── POWER_Point_Daily_*.csv   # File dữ liệu chính
 ├── results/                      # Kết quả dự báo
@@ -72,16 +76,37 @@ python src/main.py --mode scheduler
 python src/main.py --mode retrain
 ```
 
-### 4. Sử dụng batch file (Windows)
+### 4. Chạy web dashboard
+
+```bash
+python src/main.py --mode web
+```
+
+### 5. Chạy dự báo với web dashboard
+
+```bash
+python src/main.py --mode once
+# Web dashboard sẽ tự động mở tại http://127.0.0.1:5000
+```
+
+### 6. Tắt web dashboard
+
+```bash
+python src/main.py --mode once --no-web
+```
+
+### 7. Sử dụng batch file (Windows)
 
 ```bash
 run_daily_forecast.bat
 ```
 
 Chọn mode:
-- **1**: Daily Forecast (once)
-- **2**: Daily Scheduler (continuous) 
-- **3**: Retrain Model
+- **1**: Daily Forecast (once) - không có web
+- **2**: Daily Scheduler (continuous) - có web dashboard
+- **3**: Retrain Model - không có web
+- **4**: Web Dashboard Only
+- **5**: Daily Forecast + Web Dashboard
 
 ## ⚙️ Cấu hình
 
@@ -136,10 +161,25 @@ Xem file `daily_forecast.log` để theo dõi quá trình hoạt động:
 tail -f daily_forecast.log
 ```
 
+## 🌐 Web Dashboard
+
+### Tính năng web dashboard:
+- **Giao diện đẹp mắt**: Thiết kế responsive, hiện đại
+- **Hiển thị trực quan**: Cards cho từng ngày dự báo
+- **Tự động cập nhật**: Refresh dữ liệu mỗi 5 phút
+- **API endpoints**: `/api/forecast`, `/api/status`
+- **Real-time**: Cập nhật ngay khi có dự báo mới
+
+### Truy cập web dashboard:
+- **URL**: http://127.0.0.1:5000
+- **Tự động mở**: Khi chạy `--mode once` hoặc `--mode scheduler`
+- **Chỉ web**: Khi chạy `--mode web`
+
 ## 📈 Kết quả
 
 Hệ thống sẽ tạo ra:
 - **Dự báo hàng ngày**: QV2M và GWETROOT cho ngày tiếp theo
+- **Web dashboard**: Giao diện web để xem kết quả
 - **Log file**: Ghi lại toàn bộ quá trình hoạt động
 - **Model files**: model.h5 và scaler.pkl được tự động cập nhật
 

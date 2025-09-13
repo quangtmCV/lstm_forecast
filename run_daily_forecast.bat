@@ -32,23 +32,33 @@ echo Available modes:
 echo 1. Daily Forecast (once)
 echo 2. Daily Scheduler (continuous)
 echo 3. Retrain Model
+echo 4. Web Dashboard Only
+echo 5. Daily Forecast + Web Dashboard
 echo.
 
-set /p choice="Select mode (1-3): "
+set /p choice="Select mode (1-5): "
 
 if "%choice%"=="1" (
     echo Running daily forecast (once)...
-    python src/main.py --mode once
+    python src/main.py --mode once --no-web
 ) else if "%choice%"=="2" (
     echo Running daily scheduler...
     echo Press Ctrl+C to stop
     python src/main.py --mode scheduler
 ) else if "%choice%"=="3" (
     echo Retraining model...
-    python src/main.py --mode retrain
+    python src/main.py --mode retrain --no-web
+) else if "%choice%"=="4" (
+    echo Starting web dashboard only...
+    echo Dashboard will be available at: http://127.0.0.1:5000
+    echo Press Ctrl+C to stop
+    python src/main.py --mode web
+) else if "%choice%"=="5" (
+    echo Running daily forecast with web dashboard...
+    python src/main.py --mode once
 ) else (
     echo Invalid choice. Running default mode...
-    python src/main.py --mode once
+    python src/main.py --mode once --no-web
 )
 
 echo.
