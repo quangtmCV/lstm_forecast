@@ -76,26 +76,29 @@ python src/main.py --mode scheduler
 python src/main.py --mode retrain
 ```
 
-### 4. Chạy web dashboard
+[//]: # (### 4. Chạy web dashboard)
 
-```bash
-python src/main.py --mode web
-```
+[//]: # ()
+[//]: # (```bash)
 
-### 5. Chạy dự báo với web dashboard
+[//]: # (python src/main.py --mode web)
+
+[//]: # (```)
+
+### 4. Chạy dự báo với web dashboard
 
 ```bash
 python src/main.py --mode once
 # Web dashboard sẽ tự động mở tại http://127.0.0.1:5000
 ```
 
-### 6. Tắt web dashboard
+### 5. Tắt web dashboard
 
 ```bash
 python src/main.py --mode once --no-web
 ```
 
-### 7. Sử dụng batch file (Windows)
+### 6. Sử dụng batch file (Windows)
 
 ```bash
 run_daily_forecast.bat
@@ -182,6 +185,29 @@ Hệ thống sẽ tạo ra:
 - **Web dashboard**: Giao diện web để xem kết quả
 - **Log file**: Ghi lại toàn bộ quá trình hoạt động
 - **Model files**: model.h5 và scaler.pkl được tự động cập nhật
+
+## 📘 Giải thích các thông số (ví dụ)
+
+- **QV2M**: 20.1268
+  - Thường là Specific Humidity at 2 m (độ ẩm riêng phần của không khí ở cao độ 2 m).
+  - Đơn vị tùy nguồn, phổ biến là g/kg (hoặc kg/kg). Giá trị ~20 thường hiểu là g/kg.
+
+- **GWETROOT**: 0.8380
+  - Soil Moisture in Root Zone (độ ẩm đất vùng rễ), chuẩn hóa trong khoảng 0–1.
+  - 0.8380 nghĩa là đất vùng rễ đang 83.8% ẩm, gần mức Field Capacity.
+
+- **IRRIGATION_NET_MM**: 0.0000
+  - Net irrigation water requirement (mm): lượng nước cần bổ sung để đưa ẩm độ đất về Field Capacity.
+  - Đơn vị: mm lớp nước. Bằng 0 → chưa cần tưới vì đất còn đủ ẩm.
+
+- **IRRIGATION_GROSS_MM**: 0.0000
+  - Lượng nước thực tế phải tưới có tính tổn thất do hiệu suất hệ thống tưới < 100%.
+  - Công thức: Gross = Net / IrrigationEfficiency
+  - Ví dụ Net = 10 mm, Efficiency = 0.8 → Gross = 12.5 mm.
+
+- **DEPLETION_FRAC**: 0.0000
+  - Tỷ lệ nước đã bị khai thác/thiếu hụt so với lượng nước có thể khai thác (AWC) trong vùng rễ.
+  - 0 nghĩa là đất chưa bị thiếu nước. Nếu vượt ngưỡng (thường 0.3–0.5 tùy cây trồng) thì cần tưới.
 
 ## 🔄 Quy trình hoạt động
 

@@ -615,3 +615,308 @@
 2025-09-13 15:51:58,169 - INFO -    GWETROOT: 0.8860
 2025-09-13 15:51:58,169 - INFO - [SUCCESS] Daily forecast completed successfully!
 2025-09-13 15:51:58,169 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-09-13 15:55:26,289 - INFO - [SUCCESS] Web dashboard initialized
+2025-09-13 15:55:26,289 - INFO - Starting daily forecast pipeline
+2025-09-13 15:55:26,290 - INFO - ============================================================
+2025-09-13 15:55:26,290 - INFO - Step 1: Updating data from NASA POWER API...
+2025-09-13 15:55:26,290 - INFO - Updating data from NASA POWER API...
+2025-09-13 15:55:39,407 - INFO - [SUCCESS] Data updated successfully
+2025-09-13 15:55:39,449 - INFO - Data loaded: 5027 records
+2025-09-13 15:55:39,449 - INFO - Date range: 2011-12-07 to 2025-09-10
+2025-09-13 15:55:39,450 - INFO - Latest data date after update: 2025-09-10
+2025-09-13 15:55:39,450 - INFO - Data is now 3 days behind current date
+2025-09-13 15:55:39,450 - INFO - Step 2: Loading latest data...
+2025-09-13 15:55:39,492 - INFO - Data loaded: 5027 records
+2025-09-13 15:55:39,492 - INFO - Date range: 2011-12-07 to 2025-09-10
+2025-09-13 15:55:39,493 - INFO - Latest data date: 2025-09-10
+2025-09-13 15:55:39,493 - INFO - Current date: 2025-09-13
+2025-09-13 15:55:39,493 - INFO - Data is 3 days behind
+2025-09-13 15:55:39,493 - WARNING - Data is 3 days old. Consider updating data source.
+2025-09-13 15:55:39,493 - INFO - Step 3: Loading or training model...
+2025-09-13 15:55:39,685 - INFO - [SUCCESS] Loaded existing model
+2025-09-13 15:55:39,685 - INFO - Using existing model
+2025-09-13 15:55:39,685 - INFO - Step 4: Making forecast...
+2025-09-13 15:55:39,685 - INFO - Making 1-day forecast...
+2025-09-13 15:55:39,926 - INFO - Forecast for 2025-09-14:
+2025-09-13 15:55:39,926 - INFO -    QV2M: 20.7696
+2025-09-13 15:55:39,926 - INFO -    GWETROOT: 0.8860
+2025-09-13 15:55:39,926 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-09-13 15:55:39,926 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-09-18 19:25:58,260 - INFO - [SUCCESS] Web dashboard initialized
+2025-09-18 19:25:58,261 - INFO - Starting daily forecast pipeline
+2025-09-18 19:25:58,261 - INFO - ============================================================
+2025-09-18 19:25:58,261 - INFO - Step 1: Updating data from NASA POWER API...
+2025-09-18 19:25:58,261 - INFO - Updating data from NASA POWER API...
+2025-09-18 19:26:10,857 - INFO - [SUCCESS] Data updated successfully
+2025-09-18 19:26:10,899 - INFO - Data loaded: 5031 records
+2025-09-18 19:26:10,899 - INFO - Date range: 2011-12-07 to 2025-09-14
+2025-09-18 19:26:10,899 - INFO - Latest data date after update: 2025-09-14
+2025-09-18 19:26:10,899 - INFO - Data is now 4 days behind current date
+2025-09-18 19:26:10,899 - INFO - Step 2: Loading latest data...
+2025-09-18 19:26:10,940 - INFO - Data loaded: 5031 records
+2025-09-18 19:26:10,941 - INFO - Date range: 2011-12-07 to 2025-09-14
+2025-09-18 19:26:10,941 - INFO - Latest data date: 2025-09-14
+2025-09-18 19:26:10,941 - INFO - Current date: 2025-09-18
+2025-09-18 19:26:10,941 - INFO - Data is 4 days behind
+2025-09-18 19:26:10,941 - WARNING - Data is 4 days old. Consider updating data source.
+2025-09-18 19:26:10,942 - INFO - Step 3: Loading or training model...
+2025-09-18 19:26:11,138 - INFO - [SUCCESS] Loaded existing model
+2025-09-18 19:26:11,138 - INFO - Using existing model
+2025-09-18 19:26:11,138 - INFO - Step 4: Making forecast...
+2025-09-18 19:26:11,138 - INFO - Making 1-day forecast...
+2025-09-18 19:26:11,388 - INFO - Forecast for 2025-09-19:
+2025-09-18 19:26:11,388 - INFO -    QV2M: 20.6361
+2025-09-18 19:26:11,388 - INFO -    GWETROOT: 0.8738
+2025-09-18 19:26:11,389 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-09-18 19:26:11,389 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-09-18 19:50:03,059 - INFO - [SUCCESS] Web dashboard initialized
+2025-09-18 19:50:03,059 - INFO - Starting daily forecast pipeline
+2025-09-18 19:50:03,059 - INFO - ============================================================
+2025-09-18 19:50:03,059 - INFO - Step 1: Updating data from NASA POWER API...
+2025-09-18 19:50:03,059 - INFO - Updating data from NASA POWER API...
+2025-09-18 19:50:04,773 - INFO - [SUCCESS] Data updated successfully
+2025-09-18 19:50:04,815 - INFO - Data loaded: 5031 records
+2025-09-18 19:50:04,815 - INFO - Date range: 2011-12-07 to 2025-09-14
+2025-09-18 19:50:04,815 - INFO - Latest data date after update: 2025-09-14
+2025-09-18 19:50:04,815 - INFO - Data is now 4 days behind current date
+2025-09-18 19:50:04,815 - INFO - Step 2: Loading latest data...
+2025-09-18 19:50:04,858 - INFO - Data loaded: 5031 records
+2025-09-18 19:50:04,858 - INFO - Date range: 2011-12-07 to 2025-09-14
+2025-09-18 19:50:04,858 - INFO - Latest data date: 2025-09-14
+2025-09-18 19:50:04,858 - INFO - Current date: 2025-09-18
+2025-09-18 19:50:04,858 - INFO - Data is 4 days behind
+2025-09-18 19:50:04,858 - WARNING - Data is 4 days old. Consider updating data source.
+2025-09-18 19:50:04,858 - INFO - Step 3: Loading or training model...
+2025-09-18 19:50:05,050 - INFO - [SUCCESS] Loaded existing model
+2025-09-18 19:50:05,050 - INFO - Using existing model
+2025-09-18 19:50:05,050 - INFO - Step 4: Making forecast...
+2025-09-18 19:50:05,050 - INFO - Making 1-day forecast...
+2025-09-18 19:50:05,301 - INFO - Forecast for 2025-09-19:
+2025-09-18 19:50:05,302 - INFO -    QV2M: 20.6361
+2025-09-18 19:50:05,302 - INFO -    GWETROOT: 0.8738
+2025-09-18 19:50:05,302 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-09-18 19:50:05,302 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-10-02 20:01:44,714 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:01:44,714 - INFO - Starting daily forecast pipeline
+2025-10-02 20:01:44,714 - INFO - ============================================================
+2025-10-02 20:01:44,714 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:01:44,714 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:01:46,882 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:01:46,916 - ERROR - [ERROR] Error loading data: "['T2M', 'T2M_MAX', 'T2M_MIN', 'WS2M', 'ALLSKY_SFC_SW_DWN', 'PRECTOT'] not in index"
+2025-10-02 20:01:46,916 - INFO - Step 2: Loading latest data...
+2025-10-02 20:01:46,954 - ERROR - [ERROR] Error loading data: "['T2M', 'T2M_MAX', 'T2M_MIN', 'WS2M', 'ALLSKY_SFC_SW_DWN', 'PRECTOT'] not in index"
+2025-10-02 20:03:57,547 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:03:57,547 - INFO - Starting daily forecast pipeline
+2025-10-02 20:03:57,547 - INFO - ============================================================
+2025-10-02 20:03:57,547 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:03:57,547 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:03:59,114 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:03:59,155 - INFO - Data loaded: 5046 records
+2025-10-02 20:03:59,155 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:03:59,155 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:03:59,155 - INFO - Data is now 3 days behind current date
+2025-10-02 20:03:59,155 - INFO - Step 2: Loading latest data...
+2025-10-02 20:03:59,198 - INFO - Data loaded: 5046 records
+2025-10-02 20:03:59,198 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:03:59,198 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:03:59,198 - INFO - Current date: 2025-10-02
+2025-10-02 20:03:59,198 - INFO - Data is 3 days behind
+2025-10-02 20:03:59,198 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:03:59,198 - INFO - Step 3: Loading or training model...
+2025-10-02 20:04:01,521 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:04:01,521 - INFO - Using existing model
+2025-10-02 20:04:01,521 - INFO - Step 4: Making forecast...
+2025-10-02 20:04:01,521 - INFO - Making 1-day forecast...
+2025-10-02 20:04:03,024 - ERROR - [ERROR] Error making forecast: 0
+2025-10-02 20:04:03,024 - ERROR - [ERROR] Daily forecast failed!
+2025-10-02 20:06:46,560 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:06:46,560 - INFO - Starting daily forecast pipeline
+2025-10-02 20:06:46,560 - INFO - ============================================================
+2025-10-02 20:06:46,560 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:06:46,560 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:06:59,401 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:06:59,439 - INFO - Data loaded: 5046 records
+2025-10-02 20:06:59,439 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:06:59,439 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:06:59,439 - INFO - Data is now 3 days behind current date
+2025-10-02 20:06:59,439 - INFO - Step 2: Loading latest data...
+2025-10-02 20:06:59,478 - INFO - Data loaded: 5046 records
+2025-10-02 20:06:59,478 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:06:59,478 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:06:59,478 - INFO - Current date: 2025-10-02
+2025-10-02 20:06:59,487 - INFO - Data is 3 days behind
+2025-10-02 20:06:59,487 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:06:59,487 - INFO - Step 3: Loading or training model...
+2025-10-02 20:06:59,664 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:06:59,664 - INFO - Using existing model
+2025-10-02 20:06:59,664 - INFO - Step 4: Making forecast...
+2025-10-02 20:06:59,664 - INFO - Making 1-day forecast...
+2025-10-02 20:06:59,905 - ERROR - [ERROR] Error making forecast: 0
+2025-10-02 20:06:59,905 - ERROR - [ERROR] Daily forecast failed!
+2025-10-02 20:09:50,798 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:09:50,798 - INFO - Starting daily forecast pipeline
+2025-10-02 20:09:50,798 - INFO - ============================================================
+2025-10-02 20:09:50,798 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:09:50,798 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:09:52,467 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:09:52,504 - INFO - Data loaded: 5046 records
+2025-10-02 20:09:52,504 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:09:52,504 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:09:52,509 - INFO - Data is now 3 days behind current date
+2025-10-02 20:09:52,509 - INFO - Step 2: Loading latest data...
+2025-10-02 20:09:52,550 - INFO - Data loaded: 5046 records
+2025-10-02 20:09:52,550 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:09:52,552 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:09:52,552 - INFO - Current date: 2025-10-02
+2025-10-02 20:09:52,552 - INFO - Data is 3 days behind
+2025-10-02 20:09:52,552 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:09:52,552 - INFO - Step 3: Loading or training model...
+2025-10-02 20:09:52,737 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:09:52,737 - INFO - Using existing model
+2025-10-02 20:09:52,737 - INFO - Step 4: Making forecast...
+2025-10-02 20:09:52,737 - INFO - Making 1-day forecast...
+2025-10-02 20:09:53,017 - ERROR - [ERROR] Error making forecast: 0
+2025-10-02 20:09:53,017 - ERROR - [ERROR] Daily forecast failed!
+2025-10-02 20:35:34,179 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:35:34,179 - INFO - Starting daily forecast pipeline
+2025-10-02 20:35:34,179 - INFO - ============================================================
+2025-10-02 20:35:34,179 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:35:34,179 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:35:36,185 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:35:36,226 - INFO - Data loaded: 5046 records
+2025-10-02 20:35:36,227 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:35:36,227 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:35:36,227 - INFO - Data is now 3 days behind current date
+2025-10-02 20:35:36,227 - INFO - Step 2: Loading latest data...
+2025-10-02 20:35:36,269 - INFO - Data loaded: 5046 records
+2025-10-02 20:35:36,269 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:35:36,269 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:35:36,269 - INFO - Current date: 2025-10-02
+2025-10-02 20:35:36,269 - INFO - Data is 3 days behind
+2025-10-02 20:35:36,269 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:35:36,269 - INFO - Step 3: Loading or training model...
+2025-10-02 20:35:36,443 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:35:36,443 - INFO - Using existing model
+2025-10-02 20:35:36,443 - INFO - Step 4: Making forecast...
+2025-10-02 20:35:36,443 - INFO - Making 1-day forecast...
+2025-10-02 20:35:36,692 - INFO - Forecast for 2025-10-03:
+2025-10-02 20:35:36,692 - INFO -    QV2M: 20.1268
+2025-10-02 20:35:36,692 - INFO -    GWETROOT: 0.8380
+2025-10-02 20:35:36,692 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-10-02 20:35:36,692 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-10-02 20:38:57,180 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:38:57,180 - INFO - Starting daily forecast pipeline
+2025-10-02 20:38:57,181 - INFO - ============================================================
+2025-10-02 20:38:57,181 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:38:57,181 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:38:58,965 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:38:59,006 - INFO - Data loaded: 5046 records
+2025-10-02 20:38:59,006 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:38:59,006 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:38:59,006 - INFO - Data is now 3 days behind current date
+2025-10-02 20:38:59,006 - INFO - Step 2: Loading latest data...
+2025-10-02 20:38:59,046 - INFO - Data loaded: 5046 records
+2025-10-02 20:38:59,046 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:38:59,046 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:38:59,046 - INFO - Current date: 2025-10-02
+2025-10-02 20:38:59,046 - INFO - Data is 3 days behind
+2025-10-02 20:38:59,046 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:38:59,046 - INFO - Step 3: Loading or training model...
+2025-10-02 20:38:59,237 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:38:59,238 - INFO - Using existing model
+2025-10-02 20:38:59,238 - INFO - Step 4: Making forecast...
+2025-10-02 20:38:59,238 - INFO - Making 1-day forecast...
+2025-10-02 20:38:59,482 - INFO - Forecast for 2025-10-03:
+2025-10-02 20:38:59,482 - INFO -    QV2M: 20.1268
+2025-10-02 20:38:59,482 - INFO -    GWETROOT: 0.8380
+2025-10-02 20:38:59,482 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-10-02 20:38:59,482 - INFO - Step 5: Calculating irrigation requirement from GWETROOT...
+2025-10-02 20:38:59,482 - INFO - Irrigation (day 1) -> Net: 0.00 mm, Gross: 0.00 mm, Depletion: 0.000
+2025-10-02 20:38:59,482 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-10-02 20:41:06,335 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:41:06,335 - INFO - Starting daily forecast pipeline
+2025-10-02 20:41:06,335 - INFO - ============================================================
+2025-10-02 20:41:06,336 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:41:06,336 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:41:19,279 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:41:19,321 - INFO - Data loaded: 5046 records
+2025-10-02 20:41:19,321 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:41:19,321 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:41:19,321 - INFO - Data is now 3 days behind current date
+2025-10-02 20:41:19,321 - INFO - Step 2: Loading latest data...
+2025-10-02 20:41:19,364 - INFO - Data loaded: 5046 records
+2025-10-02 20:41:19,364 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:41:19,364 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:41:19,364 - INFO - Current date: 2025-10-02
+2025-10-02 20:41:19,364 - INFO - Data is 3 days behind
+2025-10-02 20:41:19,364 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:41:19,364 - INFO - Step 3: Loading or training model...
+2025-10-02 20:41:19,552 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:41:19,552 - INFO - Using existing model
+2025-10-02 20:41:19,552 - INFO - Step 4: Making forecast...
+2025-10-02 20:41:19,552 - INFO - Making 1-day forecast...
+2025-10-02 20:41:19,792 - INFO - Forecast for 2025-10-03:
+2025-10-02 20:41:19,792 - INFO -    QV2M: 20.1268
+2025-10-02 20:41:19,792 - INFO -    GWETROOT: 0.8380
+2025-10-02 20:41:19,793 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-10-02 20:41:19,793 - INFO - Step 5: Calculating irrigation requirement from GWETROOT...
+2025-10-02 20:41:19,793 - INFO - Irrigation (day 1) -> Net: 0.00 mm, Gross: 0.00 mm, Depletion: 0.000
+2025-10-02 20:41:19,793 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-10-02 20:45:31,874 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:45:31,874 - INFO - Starting daily forecast pipeline
+2025-10-02 20:45:31,874 - INFO - ============================================================
+2025-10-02 20:45:31,874 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:45:31,874 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:45:33,347 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:45:33,389 - INFO - Data loaded: 5046 records
+2025-10-02 20:45:33,389 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:45:33,389 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:45:33,389 - INFO - Data is now 3 days behind current date
+2025-10-02 20:45:33,389 - INFO - Step 2: Loading latest data...
+2025-10-02 20:45:33,426 - INFO - Data loaded: 5046 records
+2025-10-02 20:45:33,426 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:45:33,426 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:45:33,426 - INFO - Current date: 2025-10-02
+2025-10-02 20:45:33,426 - INFO - Data is 3 days behind
+2025-10-02 20:45:33,426 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:45:33,426 - INFO - Step 3: Loading or training model...
+2025-10-02 20:45:33,616 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:45:33,616 - INFO - Using existing model
+2025-10-02 20:45:33,616 - INFO - Step 4: Making forecast...
+2025-10-02 20:45:33,616 - INFO - Making 1-day forecast...
+2025-10-02 20:45:33,861 - INFO - Forecast for 2025-10-03:
+2025-10-02 20:45:33,861 - INFO -    QV2M: 20.1268
+2025-10-02 20:45:33,861 - INFO -    GWETROOT: 0.8380
+2025-10-02 20:45:33,861 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-10-02 20:45:33,861 - INFO - Step 5: Calculating irrigation requirement from GWETROOT...
+2025-10-02 20:45:33,861 - INFO - Irrigation (day 1) -> Net: 0.00 mm, Gross: 0.00 mm, Depletion: 0.089
+2025-10-02 20:45:33,861 - INFO - [SUCCESS] Web dashboard updated with forecast data
+2025-10-02 20:47:36,596 - INFO - [SUCCESS] Web dashboard initialized
+2025-10-02 20:47:36,596 - INFO - Starting daily forecast pipeline
+2025-10-02 20:47:36,596 - INFO - ============================================================
+2025-10-02 20:47:36,596 - INFO - Step 1: Updating data from NASA POWER API...
+2025-10-02 20:47:36,596 - INFO - Updating data from NASA POWER API...
+2025-10-02 20:47:38,585 - INFO - [SUCCESS] Data updated successfully
+2025-10-02 20:47:38,630 - INFO - Data loaded: 5046 records
+2025-10-02 20:47:38,630 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:47:38,631 - INFO - Latest data date after update: 2025-09-29
+2025-10-02 20:47:38,631 - INFO - Data is now 3 days behind current date
+2025-10-02 20:47:38,631 - INFO - Step 2: Loading latest data...
+2025-10-02 20:47:38,672 - INFO - Data loaded: 5046 records
+2025-10-02 20:47:38,673 - INFO - Date range: 2011-12-07 to 2025-09-29
+2025-10-02 20:47:38,673 - INFO - Latest data date: 2025-09-29
+2025-10-02 20:47:38,673 - INFO - Current date: 2025-10-02
+2025-10-02 20:47:38,673 - INFO - Data is 3 days behind
+2025-10-02 20:47:38,674 - WARNING - Data is 3 days old. Consider updating data source.
+2025-10-02 20:47:38,674 - INFO - Step 3: Loading or training model...
+2025-10-02 20:47:38,873 - INFO - [SUCCESS] Loaded existing model
+2025-10-02 20:47:38,873 - INFO - Using existing model
+2025-10-02 20:47:38,873 - INFO - Step 4: Making forecast...
+2025-10-02 20:47:38,873 - INFO - Making 1-day forecast...
+2025-10-02 20:47:39,123 - INFO - Forecast for 2025-10-03:
+2025-10-02 20:47:39,123 - INFO -    QV2M: 20.1268
+2025-10-02 20:47:39,123 - INFO -    GWETROOT: 0.8380
+2025-10-02 20:47:39,124 - INFO - [SUCCESS] Daily forecast completed successfully!
+2025-10-02 20:47:39,124 - INFO - Step 5: Calculating irrigation requirement from GWETROOT...
+2025-10-02 20:47:39,124 - INFO - Irrigation (day 1) -> Net: 0.00 mm, Gross: 0.00 mm, Depletion: 0.000
+2025-10-02 20:47:39,124 - INFO - [SUCCESS] Web dashboard updated with forecast data

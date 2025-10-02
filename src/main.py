@@ -16,6 +16,7 @@ from data_fetcher import DataFetcher
 from model import build_model
 from trainer import Trainer
 from web_dashboard import WebDashboard, create_templates
+from irrigation_calculator import IrrigationCalculator, IrrigationConfig
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 import pickle
@@ -254,6 +255,22 @@ class DailyForecastMain:
             
             if forecasts:
                 self.logger.info("[SUCCESS] Daily forecast completed successfully!")
+                # Step 5: Compute irrigation requirement based on GWETROOT
+                self.logger.info("Step 5: Calculating irrigation requirement from GWETROOT...")
+                try:
+                    irr_config = IrrigationConfig()
+                    irr_calc = IrrigationCalculator(irr_config)
+                    # No rainfall forecast provided; set to 0 or integrate later
+                    enriched = irr_calc.calculate_for_forecasts(forecasts)
+                    forecasts = enriched
+                    for i, fc in enumerate(forecasts):
+                        self.logger.info(
+                            f"Irrigation (day {i+1}) -> Net: {fc.get('IRRIGATION_NET_MM', 0):.2f} mm, "
+                            f"Gross: {fc.get('IRRIGATION_GROSS_MM', 0):.2f} mm, "
+                            f"Depletion: {fc.get('DEPLETION_FRAC', 0):.3f}"
+                        )
+                except Exception as e:
+                    self.logger.warning(f"[WARNING] Irrigation calculation failed: {e}")
                 
                 # Update web dashboard if enabled
                 if self.enable_web and self.web_dashboard:
@@ -346,6 +363,14 @@ def main():
                 print(f"\n{tomorrow.strftime('%Y-%m-%d')}:")
                 for feature, value in forecast.items():
                     print(f"   {feature}: {value:.4f}")
+                # Also print irrigation values if available
+                net = forecast.get('IRRIGATION_NET_MM')
+                gross = forecast.get('IRRIGATION_GROSS_MM')
+                depl = forecast.get('DEPLETION_FRAC')
+                if net is not None and gross is not None and depl is not None:
+                    print(f"   IRRIGATION_NET_MM: {net:.2f} mm")
+                    print(f"   IRRIGATION_GROSS_MM: {gross:.2f} mm")
+                    print(f"   DEPLETION_FRAC: {depl:.3f}")
             
             # Show web dashboard info if enabled
             if enable_web and forecast_system.web_dashboard:

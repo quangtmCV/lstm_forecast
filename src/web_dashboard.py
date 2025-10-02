@@ -63,7 +63,10 @@ class WebDashboard:
                 'date_formatted': forecast_date.strftime('%Y-%m-%d'),
                 'day_name': forecast_date.strftime('%A'),
                 'qv2m': round(forecast.get('QV2M', 0), 4),
-                'gwetroot': round(forecast.get('GWETROOT', 0), 4)
+                'gwetroot': round(forecast.get('GWETROOT', 0), 4),
+                'irrigation_net_mm': round(forecast.get('IRRIGATION_NET_MM', 0.0), 2),
+                'irrigation_gross_mm': round(forecast.get('IRRIGATION_GROSS_MM', 0.0), 2),
+                'depletion_frac': round(forecast.get('DEPLETION_FRAC', 0.0), 3)
             })
     
     def run(self, debug=False):
@@ -339,6 +342,18 @@ def create_templates():
                         <div class="metric gwetroot">
                             <div class="metric-label">🌱 Độ ẩm đất</div>
                             <div class="metric-value">{{ forecast.gwetroot }}</div>
+                        </div>
+                        <div class="metric" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white;">
+                            <div class="metric-label" style="color: white;">🚿 Lượng tưới (NET, mm)</div>
+                            <div class="metric-value" style="color: white;">{{ forecast.irrigation_net_mm }}</div>
+                        </div>
+                        <div class="metric" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white;">
+                            <div class="metric-label" style="color: white;">🚜 Lượng tưới (GROSS, mm)</div>
+                            <div class="metric-value" style="color: white;">{{ forecast.irrigation_gross_mm }}</div>
+                        </div>
+                        <div class="metric" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white;">
+                            <div class="metric-label" style="color: white;">📉 Mức cạn kiệt AWC</div>
+                            <div class="metric-value" style="color: white;">{{ forecast.depletion_frac }}</div>
                         </div>
                     </div>
                 </div>
